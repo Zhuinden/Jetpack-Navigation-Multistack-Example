@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@+id/initialFragment"
+    tools:ignore="UnusedNavigation">
+
+    <action android:id="@+id/initial_to_root"
+        app:enterAnim="@anim/slide_in_from_right"
+        app:exitAnim="@anim/slide_out_to_left"
+        app:popEnterAnim="@anim/slide_in_from_left"
+        app:popExitAnim="@anim/slide_out_to_right"
+        app:destination="@+id/rootFragment"/>
+
+    <fragment
+        android:id="@+id/initialFragment"
+        android:name="com.zhuinden.jetpacknavbottomnavfragmentexample.features.initial.InitialFragment"/>
+
+    <fragment
+        android:id="@+id/rootFragment"
+        android:name="com.zhuinden.jetpacknavbottomnavfragmentexample.features.root.RootFragment"/>
+</navigation>
