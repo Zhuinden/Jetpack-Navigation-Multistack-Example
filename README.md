@@ -4,7 +4,7 @@ A showcase of using Jetpack Navigation with Fragments in a multi-stack scenario 
 
 ## License
 
-    Copyright 2020 Gabor Varadi
+    Copyright 2021 Gabor Varadi
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
