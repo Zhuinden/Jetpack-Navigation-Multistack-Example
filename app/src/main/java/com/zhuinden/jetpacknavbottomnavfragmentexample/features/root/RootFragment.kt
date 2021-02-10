@@ -6,10 +6,10 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import com.zhuinden.jetpacknavbottomnavfragmentexample.R
 import com.zhuinden.jetpacknavbottomnavfragmentexample.core.navigation.FragmentStackHostFragment
 import com.zhuinden.jetpacknavbottomnavfragmentexample.databinding.RootFragmentBinding
-import com.zhuinden.jetpacknavbottomnavfragmentexample.utils.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
