@@ -12,31 +12,23 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class FragmentStackHostFragment : Fragment(R.layout.stack_host_fragment) {
     companion object {
-        fun newInstance(@NavigationRes navigationId: Int): FragmentStackHostFragment = FragmentStackHostFragment().apply {
-            arguments = Bundle().also { bundle ->
-                bundle.putInt("navigationId", navigationId)
+        fun newInstance(@NavigationRes navigationId: Int): FragmentStackHostFragment =
+            FragmentStackHostFragment().apply {
+                arguments = Bundle().also { bundle ->
+                    bundle.putInt("navigationId", navigationId)
+                }
             }
-        }
     }
 
-    lateinit var navController: NavController
-        private set
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        if (savedInstanceState == null) {
+            val childNavHostFragment = NavHostFragment.create(requireArguments().getInt("navigationId"))
 
-        val navController = NavHostFragment.findNavController(childFragmentManager.findFragmentById(R.id.containerStackHost) as NavHostFragment)
-        this.navController = navController
-
-        val hasGraph = try {
-            navController.graph
-            true
-        } catch (e: IllegalStateException) {
-            false
-        }
-
-        if (!hasGraph) {
-            navController.setGraph(requireArguments().getInt("navigationId"))
+            childFragmentManager.beginTransaction()
+                .add(R.id.containerStackHost, childNavHostFragment, "NavHostFragment")
+                .commitAllowingStateLoss()
         }
     }
 }

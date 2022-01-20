@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/containerStackHost"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:name="androidx.navigation.fragment.NavHostFragment">
+    android:layout_height="match_parent">
 
 </androidx.fragment.app.FragmentContainerView>
